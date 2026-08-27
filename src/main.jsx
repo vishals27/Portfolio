@@ -43,6 +43,7 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="nav-resume">Resume ↗</a>
         </nav>
       </header>
 
@@ -59,6 +60,7 @@ function App() {
             </p>
             <div className="buttons">
               <a className="btn primary" href="#projects">View Projects</a>
+              <a className="btn secondary" href="/resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
               <a className="btn secondary" href="#contact">Contact Me</a>
             </div>
           </div>
@@ -142,9 +144,10 @@ function App() {
           <h2>Let's build something <span>great.</span></h2>
           <p>I'm currently exploring new software development opportunities.</p>
           <div className="contact-links">
-            <a href="mailto:your.email@example.com">your.email@example.com</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="mailto:vishal.ppp.9721@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/vishal-pandey-46551b1b9" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+            {/* <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a> */}
           </div>
         </section>
       </main>
