@@ -64,15 +64,58 @@ function App() {
               <a className="btn secondary" href="#contact">Contact Me</a>
             </div>
           </div>
-          <div className="code-card">
-            <div className="dots"><i></i><i></i><i></i></div>
-            <pre>{`const developer = {
-  name: "Vishal Pandey",
-  role: "Software Developer",
-  experience: "4 years",
-  stack: [".NET", "C#", "React"],
-  domain: "Insurance"
-};`}</pre>
+          <div className="profile-card">
+            <div className="profile-card-top">
+              <div className="profile-badge">
+                <span className="badge-avatar">VP</span>
+                <div>
+                  <h3 className="profile-name">Vishal Pandey</h3>
+                  <p className="profile-role">Software Developer</p>
+                </div>
+              </div>
+              <div className="status-indicator">
+                <span className="pulse-dot"></span>
+                <span>Available</span>
+              </div>
+            </div>
+
+            <div className="profile-stats">
+              <div className="stat-item">
+                <span className="stat-val">4+</span>
+                <span className="stat-lbl">Years Exp.</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-val">Enterprise</span>
+                <span className="stat-lbl">Domain</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-val">Full Stack</span>
+                <span className="stat-lbl">Focus</span>
+              </div>
+            </div>
+
+            <div className="profile-section">
+              <span className="profile-section-title">PRIMARY TECHNOLOGIES</span>
+              <div className="stack-pills">
+                <span className="pill">C#</span>
+                <span className="pill">.NET Core</span>
+                <span className="pill">React</span>
+                <span className="pill">SQL Server</span>
+                <span className="pill">Web APIs</span>
+                <span className="pill">Azure</span>
+              </div>
+            </div>
+
+            <div className="profile-footer">
+              <div className="profile-info-row">
+                <span className="info-key">Industry</span>
+                <span className="info-val">Insurance & Policy Systems</span>
+              </div>
+              <div className="profile-info-row">
+                <span className="info-key">Specialization</span>
+                <span className="info-val">Rating, APIs & Transactions</span>
+              </div>
+            </div>
           </div>
         </section>
 

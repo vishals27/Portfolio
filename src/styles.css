@@ -161,32 +161,203 @@ a {
   background: #181b24;
 }
 
-.code-card {
+.profile-card {
   background: #101219;
   border: 1px solid #282b36;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
-}
-
-.dots {
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
   display: flex;
-  gap: 7px;
-  margin-bottom: 20px;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.dots i {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #3b3e49;
+.profile-card:hover {
+  border-color: rgba(139, 124, 255, 0.4);
+  transform: translateY(-2px);
 }
 
-.code-card pre {
-  white-space: pre-wrap;
-  font: 14px/1.9 ui-monospace, SFMono-Regular, Menlo, monospace;
-  color: #c9cde0;
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(139, 124, 255, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.profile-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-badge {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.badge-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #8b7cff 0%, #6350f5 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  color: #08090d;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(139, 124, 255, 0.3);
+}
+
+.profile-name {
   margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #f5f7fb;
+  letter-spacing: -0.3px;
+}
+
+.profile-role {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #8b7cff;
+  font-weight: 500;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
+  }
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 12px;
+  background: #090a0f;
+  border: 1px solid #1f222d;
+  border-radius: 10px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-lbl {
+  font-size: 10px;
+  color: #7b8192;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #7b8192;
+}
+
+.stack-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: #171922;
+  border: 1px solid #282b37;
+  color: #d2d5e2;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  border-color: #8b7cff;
+  color: #ffffff;
+  background: #1c1f2b;
+}
+
+.profile-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  border-top: 1px solid #1c1e27;
+  padding-top: 14px;
+}
+
+.profile-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.info-key {
+  color: #7b8192;
+}
+
+.info-val {
+  color: #e2e5f0;
+  font-weight: 500;
 }
 
 .section {
@@ -352,8 +523,9 @@ footer {
     grid-template-columns: 1fr;
     padding-top: 75px;
   }
-  .code-card {
-    display: none;
+  .profile-card {
+    max-width: 100%;
+    margin-top: 15px;
   }
   .about-grid,
   .project-grid {
