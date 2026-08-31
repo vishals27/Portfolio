@@ -3,32 +3,32 @@ import { createRoot } from 'react-dom/client'
 import './styles.css'
 
 const skills = [
-  'C#', '.NET', '.NET Core', 'ASP.NET MVC', 'Web API',
-  'Entity Framework', 'SQL Server', 'React', 'JavaScript',
-  'jQuery', 'Azure Functions', 'Git', 'Azure DevOps', 'Postman',
-  'xUnit', 'NUnit', 'Moq'
+  'C#', '.NET Core', 'ASP.NET Core', 'ASP.NET MVC', 'React.js',
+  'TypeScript', 'Next.js', 'SQL Server', 'Azure Functions',
+  'Azure Service Bus', 'Entity Framework Core', 'REST APIs',
+  'OAuth 2.0', 'JWT', 'Microservices', 'CI/CD', 'xUnit', 'NUnit', 'Moq'
 ]
 
 const projects = [
   {
-    title: 'Insurance RPS Portal',
-    text: 'Enterprise insurance application supporting policy lifecycle, rating, transactions and document workflows.',
-    tags: ['.NET Core', 'ASP.NET MVC', 'SQL Server']
+    title: 'Insurance Policy Quoting Platform',
+    text: 'Engineered a high-performance insurance quoting and issuance platform integrating multi-carrier REST APIs, policy rating flows, and automated document generation.',
+    tags: ['.NET Core', 'REST APIs', 'SQL Server', 'DocxTemplater']
   },
   {
-    title: 'Policy Rating & Premium',
-    text: 'Developed and maintained rating flows, premium calculations, taxes and fees for insurance policies and endorsements.',
-    tags: ['C#', 'APIs', 'SQL']
+    title: 'Low-Code / No-Code Workflow Engine',
+    text: 'Developed a configurable workflow engine using React.js and TypeScript for dynamic form rendering and automated backend process execution in .NET Core.',
+    tags: ['React.js', 'TypeScript', '.NET Core', 'JSON Schema']
   },
   {
-    title: 'API Integrations',
-    text: 'Worked on insurance carrier and third-party API integrations, request/response transformations and production support.',
-    tags: ['Web API', 'JSON', 'Azure']
+    title: 'Asynchronous Document Processing Pipeline',
+    text: 'Architected cloud-based asynchronous workflows for decoupled document generation and mail-merge operations processing high-volume daily transactions.',
+    tags: ['Azure Functions', 'Azure Service Bus', 'Blob Storage', 'C#']
   },
   {
-    title: 'Document Generation',
-    text: 'Built document generation and mail-merge workflows for policy and transaction documents.',
-    tags: ['C#', 'DOCX', 'JavaScript']
+    title: 'Policy Rating & Premium Calculations',
+    text: 'Maintained and optimized complex rating algorithms, tax and fee computations, endorsements, and stored procedures, cutting database response times by 30%.',
+    tags: ['C#', 'SQL Server', 'LINQ', 'Stored Procedures']
   }
 ]
 
@@ -43,24 +43,23 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
-          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="nav-resume">Resume ↗</a>
+          <a href="/resume.html" target="_blank" rel="noreferrer" className="nav-resume">Resume ↗</a>
         </nav>
       </header>
 
       <main>
         <section id="home" className="hero">
           <div className="hero-content">
-            <p className="eyebrow">SOFTWARE DEVELOPER</p>
+            <p className="eyebrow">FULL STACK .NET DEVELOPER</p>
             <h1>Hi, I'm <span>Vishal Pandey</span>.</h1>
-            <h2>Building reliable software for the insurance industry.</h2>
+            <h2>Building scalable enterprise software for the insurance industry.</h2>
             <p className="hero-text">
-              4 years of experience developing scalable web applications and APIs
-              using .NET, C#, SQL Server and React, with strong experience in the
-              insurance domain.
+              4+ years of experience engineering high-performance web applications,
+              microservices, and APIs using .NET Core, C#, SQL Server, React.js, and Azure Cloud.
             </p>
             <div className="buttons">
               <a className="btn primary" href="#projects">View Projects</a>
-              <a className="btn secondary" href="/resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+              <a className="btn secondary" href="/resume.html" target="_blank" rel="noreferrer">Resume ↗</a>
               <a className="btn secondary" href="#contact">Contact Me</a>
             </div>
           </div>
@@ -70,7 +69,7 @@ function App() {
                 <span className="badge-avatar">VP</span>
                 <div>
                   <h3 className="profile-name">Vishal Pandey</h3>
-                  <p className="profile-role">Software Developer</p>
+                  <p className="profile-role">Full Stack .NET Developer</p>
                 </div>
               </div>
               <div className="status-indicator">
@@ -86,11 +85,11 @@ function App() {
               </div>
               <div className="stat-item">
                 <span className="stat-val">Enterprise</span>
-                <span className="stat-lbl">Domain</span>
+                <span className="stat-lbl">Insurance Tech</span>
               </div>
               <div className="stat-item">
                 <span className="stat-val">Full Stack</span>
-                <span className="stat-lbl">Focus</span>
+                <span className="stat-lbl">.NET & React</span>
               </div>
             </div>
 
@@ -99,17 +98,17 @@ function App() {
               <div className="stack-pills">
                 <span className="pill">C#</span>
                 <span className="pill">.NET Core</span>
-                <span className="pill">React</span>
+                <span className="pill">React.js</span>
+                <span className="pill">TypeScript</span>
                 <span className="pill">SQL Server</span>
-                <span className="pill">Web APIs</span>
-                <span className="pill">Azure</span>
+                <span className="pill">Azure Cloud</span>
               </div>
             </div>
 
             <div className="profile-footer">
               <div className="profile-info-row">
-                <span className="info-key">Industry</span>
-                <span className="info-val">Insurance & Policy Systems</span>
+                <span className="info-key">Current Company</span>
+                <span className="info-val">Cogitate Technology Solutions</span>
               </div>
               <div className="profile-info-row">
                 <span className="info-key">Specialization</span>
@@ -124,15 +123,15 @@ function App() {
           <h2>Turning business requirements into <span>clean software.</span></h2>
           <div className="about-grid">
             <p>
-              I am a Software Developer focused on building and maintaining
-              enterprise applications with C#, .NET and .NET Core. My experience
-              includes ASP.NET MVC, Web APIs, Entity Framework, SQL Server and
-              React.
+              I am a Full Stack .NET Developer with over 4 years of experience
+              building enterprise-grade applications. My expertise spans C#, .NET Core,
+              ASP.NET MVC, Web APIs, Entity Framework Core, SQL Server, React.js,
+              and Azure cloud services.
             </p>
             <p>
-              I have worked extensively in the insurance domain, including policy
-              processing, rating, premium calculations, taxes and fees, API
-              integrations, document generation and production support.
+              I have worked extensively in the insurance technology domain, including
+              multi-carrier API integrations, policy rating, premium calculations,
+              taxes & fees, automated document generation, and high-volume transaction processing.
             </p>
           </div>
         </section>
@@ -169,13 +168,26 @@ function App() {
             <div className="timeline-item">
               <div className="timeline-dot"></div>
               <div>
-                <p className="date">2022 — PRESENT</p>
-                <h3>Software Developer</h3>
+                <p className="date">MAY 2023 — PRESENT</p>
+                <h3>Software Developer — Cogitate Technology Solutions</h3>
                 <p>
-                  Developing enterprise insurance solutions using .NET, ASP.NET
-                  MVC, .NET Core APIs, SQL Server and React. Working on policy
-                  transactions, rating flows, carrier integrations, document
-                  generation, database optimization and production issues.
+                  Engineering scalable enterprise backend microservices and insurance
+                  solutions using C#, .NET Core, SQL Server, React.js, and Azure. Orchestrating
+                  cloud document workflows, optimizing database indexing and stored procedures,
+                  and implementing JWT/OAuth 2.0 security.
+                </p>
+              </div>
+            </div>
+
+            <div className="timeline-item" style={{ marginTop: '35px' }}>
+              <div className="timeline-dot"></div>
+              <div>
+                <p className="date">MAY 2022 — APR 2023</p>
+                <h3>Associate Developer — Cogitate Technology Solutions</h3>
+                <p>
+                  Built data-driven web applications using ASP.NET MVC, Razor Views, and
+                  JavaScript. Created and consumed RESTful APIs for carrier integrations and
+                  authored automated unit test suites using xUnit, NUnit, and Moq.
                 </p>
               </div>
             </div>
@@ -185,12 +197,12 @@ function App() {
         <section id="contact" className="contact">
           <p className="section-label">05 — CONTACT</p>
           <h2>Let's build something <span>great.</span></h2>
-          <p>I'm currently exploring new software development opportunities.</p>
+          <p>I'm currently based in Mumbai, India and open to software development opportunities.</p>
           <div className="contact-links">
             <a href="mailto:vishal.ppp.9721@gmail.com">Email</a>
+            <a href="tel:+919721489210">+91 9721489210</a>
             <a href="https://www.linkedin.com/in/vishal-pandey-46551b1b9" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
-            {/* <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a> */}
+            <a href="/resume.html" target="_blank" rel="noreferrer">Resume (ATS Friendly) ↗</a>
           </div>
         </section>
       </main>
