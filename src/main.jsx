@@ -202,7 +202,7 @@ function App() {
             <a href="mailto:vishal.ppp.9721@gmail.com">Email</a>
             <a href="tel:+919721489210">+91 9721489210</a>
             <a href="https://www.linkedin.com/in/vishal-pandey-46551b1b9" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-            <a href="/resume.html" target="_blank" rel="noreferrer">Resume (ATS Friendly) ↗</a>
+            <a href="/resume.html" target="_blank" rel="noreferrer">Resume ↗</a>
           </div>
         </section>
       </main>

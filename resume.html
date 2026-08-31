@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <title>Vishal Pandey - Resume</title> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4;
+      margin: 12mm 15mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #334155;
+      background: #f1f5f9;
+      line-height: 1.45;
+      font-size: 9.5pt;
+      padding: 30px 15px;
+    }
+    .resume-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      padding: 36px 40px;
+      position: relative;
+    }
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+    .action-bar {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+    }
+    .action-bar span {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .btn-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .btn-print:hover {
+      background: #1d4ed8;
+    }
+
+    /* Layout Grid */
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 36px;
+    }
+
+    /* Left Column */
+    .left-col {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding-right: 12px;
+      border-right: 1px solid #f1f5f9;
+    }
+
+    .photo-box {
+      width: 125px;
+      height: 135px;
+      background: #1e40af;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+      overflow: hidden;
+    }
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .name-block {
+      text-align: center;
+    }
+    .name-block h1 {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+    .name-block .job-sub {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #64748b;
+      margin-top: 5px;
+    }
+
+    .sidebar-section {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .sidebar-title {
+      font-size: 9.5pt;
+      font-weight: 800;
+      color: #1e40af;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 8.5pt;
+      color: #475569;
+      word-break: break-word;
+      line-height: 1.35;
+    }
+    .contact-item svg {
+      width: 14px;
+      height: 14px;
+      stroke: #64748b;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .contact-item a {
+      color: #475569;
+      text-decoration: none;
+    }
+    .contact-item a:hover {
+      color: #1e40af;
+      text-decoration: underline;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .skills-list span {
+      font-size: 8.8pt;
+      color: #334155;
+      line-height: 1.35;
+    }
+
+    .edu-block h4 {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+    .edu-block p {
+      font-size: 8.5pt;
+      color: #64748b;
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+    .edu-block .year {
+      font-size: 8pt;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .lang-item {
+      font-size: 8.8pt;
+      color: #334155;
+      margin-bottom: 3px;
+    }
+
+    /* Right Column */
+    .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .main-section {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .section-title {
+      font-size: 10pt;
+      font-weight: 800;
+      color: #1e40af;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 2px;
+    }
+
+    .about-text {
+      font-size: 9pt;
+      color: #475569;
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 14px;
+      border-left: 1.5px solid #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .exp-item {
+      position: relative;
+    }
+    .exp-dot {
+      position: absolute;
+      left: -19px;
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+    .exp-item:first-child .exp-dot {
+      background: #1e40af;
+    }
+
+    .exp-date {
+      font-size: 8pt;
+      color: #64748b;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+    .exp-role {
+      font-size: 9.8pt;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .exp-company {
+      font-size: 8.8pt;
+      color: #475569;
+      margin-bottom: 5px;
+    }
+    .exp-bullets {
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .exp-bullets li {
+      font-size: 8.6pt;
+      color: #475569;
+      line-height: 1.45;
+    }
+
+    /* Notable Achievements Cards */
+    .achievements-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .achievement-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 9px 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+    }
+    .ach-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: #1e40af;
+    }
+    .achievement-card p {
+      font-size: 8.6pt;
+      color: #334155;
+      line-height: 1.45;
+    }
+
+    /* Projects */
+    .project-block {
+      margin-bottom: 9px;
+    }
+    .project-block:last-child {
+      margin-bottom: 0;
+    }
+    .project-name {
+      font-size: 9.4pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .project-role {
+      font-size: 8.5pt;
+      color: #64748b;
+      margin-bottom: 4px;
+    }
+    .project-bullets {
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .project-bullets li {
+      font-size: 8.6pt;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    /* Certifications */
+    .cert-list {
+      margin-left: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .cert-list li {
+      font-size: 8.6pt;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar no-print">
+    <span>✨ <strong>Executive Resume Format</strong> (Matching your exact design snippet)</span>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Download PDF
+    </button>
+  </div>
+
+  <div class="resume-container">
+    <div class="resume-grid">
+      
+      <!-- LEFT COLUMN -->
+      <aside class="left-col">
+        
+        <!-- <div class="photo-box">
+          PHOTO
+        </div> -->
+
+        <div class="name-block">
+          <h1>VISHAL<br>PANDEY</h1>
+          <div class="job-sub">Full Stack .NET Developer</div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">CONTACT</div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              <span>+91 9721489210</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <a href="mailto:vishal.ppp.9721@gmail.com">vishal.ppp.9721@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Mumbai, India</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              <a href="https://linkedin.com/in/vishal-pandey-46551b1b9" target="_blank">linkedin.com/in/vishal-pandey</a>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <a href="https://portfolio-seven-henna-23.vercel.app/" target="_blank" rel="noreferrer">portfolio-seven-henna-23.vercel.app ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">SKILLS</div>
+          <div class="skills-list">
+            <span>C#</span>
+            <span>.NET Core</span>
+            <span>ASP.NET Core</span>
+            <span>React.js</span>
+            <span>TypeScript</span>
+            <span>SQL Server</span>
+            <span>Azure Functions</span>
+            <span>Azure Service Bus</span>
+            <span>Entity Framework Core</span>
+            <span>REST APIs</span>
+            <span>OAuth 2.0</span>
+            <span>JWT</span>
+            <span>CI/CD</span>
+            <span>xUnit</span>
+            <span>Microservices</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">EDUCATION</div>
+          <div class="edu-block">
+            <h4>B.Tech in Information Technology</h4>
+            <p>United College of Engineering and Research, AKTU Lucknow</p>
+            <div class="year">2018 - 2022</div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-title">LANGUAGES</div>
+          <div class="lang-item">English (Professional)</div>
+          <div class="lang-item">Hindi (Native)</div>
+        </div>
+
+      </aside>
+
+      <!-- RIGHT COLUMN -->
+      <main class="right-col">
+
+        <section class="main-section">
+          <div class="section-title">ABOUT ME</div>
+          <p class="about-text">
+            Full Stack .NET Developer with over 4 years of experience building enterprise-grade applications. Proven expertise in C#, .NET Core, React.js, and Azure cloud services. Skilled in designing scalable microservices, optimizing database performance, and implementing secure authentication protocols to deliver robust software solutions.
+          </p>
+        </section>
+
+        <section class="main-section">
+          <div class="section-title">WORK EXPERIENCE</div>
+          <div class="timeline">
+            
+            <div class="exp-item">
+              <div class="exp-dot"></div>
+              <div class="exp-date">May 2023 - Present</div>
+              <div class="exp-role">Software Developer</div>
+              <div class="exp-company">Cogitate Technology Solutions | Mumbai, India</div>
+              <ul class="exp-bullets">
+                <li>Engineered scalable enterprise backend services using C#, .NET Core, and Entity Framework Core.</li>
+                <li>Developed responsive web applications with React.js, Next.js, and TypeScript, utilizing reusable components to enhance UI consistency.</li>
+                <li>Orchestrated cloud-based asynchronous workflows using Azure Functions, Service Bus, and Blob Storage for decoupled document processing.</li>
+                <li>Optimized SQL database performance through advanced indexing, stored procedure tuning, and efficient LINQ operations.</li>
+                <li>Implemented robust security measures including JWT, OAuth 2.0, and Azure AD SSO to ensure data integrity and secure access.</li>
+              </ul>
+            </div>
+
+            <div class="exp-item">
+              <div class="exp-dot"></div>
+              <div class="exp-date">May 2022 - Apr 2023</div>
+              <div class="exp-role">Associate Developer</div>
+              <div class="exp-company">Cogitate Technology Solutions | Mumbai, India</div>
+              <ul class="exp-bullets">
+                <li>Built data-driven web applications using ASP.NET MVC, Razor Views, and JavaScript.</li>
+                <li>Created and consumed RESTful APIs to facilitate seamless data exchange between internal and external systems.</li>
+                <li>Authored comprehensive unit tests using xUnit, NUnit, and Moq to maintain high code quality and system reliability.</li>
+                <li>Collaborated with cross-functional teams to implement features and resolve technical debt in legacy systems.</li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        <section class="main-section">
+          <div class="section-title">NOTABLE ACHIEVEMENTS</div>
+          <div class="achievements-grid">
+            <div class="achievement-card">
+              <div class="ach-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <p>Engineered a high-performance insurance quoting platform by integrating multi-carrier REST APIs and automated document generation.</p>
+            </div>
+            <div class="achievement-card">
+              <div class="ach-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <p>Developed a configurable low-code workflow engine utilizing JSON-driven forms to streamline business process automation.</p>
+            </div>
+            <div class="achievement-card">
+              <div class="ach-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <p>Optimized complex SQL queries and database operations, significantly improving application data retrieval and processing efficiency.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="main-section">
+          <div class="section-title">PROJECTS</div>
+          
+          <div class="project-block">
+            <div class="project-name">Insurance Policy Quoting Platform</div>
+            <div class="project-role">Full Stack Developer</div>
+            <ul class="project-bullets">
+              <li>Integrated multi-carrier REST APIs to enable real-time insurance quoting and issuance.</li>
+              <li>Automated document generation workflows using .NET Core APIs and DocxTemplater.</li>
+            </ul>
+          </div>
+
+          <div class="project-block">
+            <div class="project-name">Low-Code / No-Code Platform</div>
+            <div class="project-role">Full Stack Developer</div>
+            <ul class="project-bullets">
+              <li>Designed a configurable workflow engine using React.js and TypeScript for dynamic form generation.</li>
+              <li>Implemented backend logic in .NET Core to support complex, JSON-driven business processes.</li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="main-section">
+          <div class="section-title">ACCOMPLISHMENTS</div>
+          <p style="font-size: 8.8pt; font-weight: 600; color: #0f172a; margin-bottom: 3px;">Certifications</p>
+          <ul class="cert-list">
+            <li>• .NET Full Stack Foundation</li>
+            <li>• Introduction to .NET Core</li>
+            <li>• Meta – React.js</li>
+            <li>• Generative AI</li>
+            <li>• Python for Everybody</li>
+          </ul>
+        </section>
+
+      </main>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
