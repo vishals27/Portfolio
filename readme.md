@@ -1,5 +1,5 @@
 # **Turning ideas into interactive web realities.**  
-  <img src="./images/myImage.png" alt="Home Page" width="1020px" height= "300px">
+  <img src="" alt="Home Page" width="1020px" height= "300px">
 
 
 I'm a **passionate Full Stack Developer** with over **4+ years of experience** building seamless, scalable, and innovative web applications. My expertise lies in harnessing modern technologies to deliver engaging user experiences and robust solutions. I'm committed to **continuous learning** and thrive in dynamic environments where creativity meets technology.
