@@ -43,7 +43,7 @@ function App() {
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
-          <a href="/Resume.pdf" target="_blank" rel="noreferrer" className="resume-btn">Resume</a>
+          <a href="/Resume_vp.pdf" target="_blank" rel="noreferrer" className="resume-btn">Resume</a>
         </nav>
       </header>
 
@@ -59,7 +59,7 @@ function App() {
             </p>
             <div className="buttons">
               <a className="btn primary" href="#projects">View Projects</a>
-              <a className="btn secondary" href="/Resume.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
+              <a className="btn secondary" href="/Resume_vp.pdf" target="_blank" rel="noreferrer">Resume ↗</a>
               <a className="btn secondary" href="#contact">Contact Me</a>
             </div>
           </div>
